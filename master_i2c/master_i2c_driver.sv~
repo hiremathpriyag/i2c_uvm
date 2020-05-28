@@ -37,7 +37,7 @@ task master_i2c_driver::run_phase(uvm_phase phase);
 	@(vif.mdrv_cb);
 	 	vif.mdrv_cb.s_resetn<=1'b0;
 	@(vif.mdrv_cb);
-		vif.sdrv_cb.s_resetn<=1'b1;	
+		vif.mdrv_cb.s_resetn<=1'b1;	
 	
 	
 	forever 

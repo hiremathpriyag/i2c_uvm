@@ -6,7 +6,7 @@ master_i2c_sequencer m_seqrh[];
 slave_i2c_sequencer  s_seqrh[];
 i2c_virtual_sequencer v_seqrh;
 
-uart_env_config e_cfg;
+i2c_env_config e_cfg;
 
 
 extern function new(string name="i2c_virtual_sequence");
@@ -23,7 +23,10 @@ task i2c_virtual_sequence::body();
 	if(!uvm_config_db #(i2c_env_config)::get(null,get_full_name(),"i2c_env_config",e_cfg))
 	`uvm_fatal("V_SEQS","cannot get the e_cfg from uvm_config_db")
 
-	seqrh=new[e_cfg.no_of_agents];
+	m_seqrh=new[e_cfg.no_of_agents];
+	s_seqrh=new[e_cfg.no_of_agents];
+
+
 
 	assert($cast(v_seqrh,m_sequencer))
 		else

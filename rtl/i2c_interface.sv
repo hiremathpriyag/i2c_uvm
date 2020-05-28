@@ -1,4 +1,4 @@
-/  ############################################################################
+//  ############################################################################
 //
 //  Licensed to the Apache Software Foundation (ASF) under one
 //  or more contributor license agreements.  See the NOTICE file
@@ -25,7 +25,7 @@
 // with the clocking bloks and modports
 // 
 //-----------------------------------------------------------------------------
-
+`timescale 1ns/1ps
 
 interface i2c_interface(input pclk);
 
@@ -38,8 +38,8 @@ interface i2c_interface(input pclk);
 	logic sda_padoen_o;
 
 clocking mdrv_cb@(posedge pclk);
-	default input #1; output #1;
-	input s_resetn;
+	default input #1 output #1;
+	output s_resetn;
 	output scl_pad_i;
 	input scl_pad_o;
 	input scl_padoen_o;
@@ -49,30 +49,31 @@ clocking mdrv_cb@(posedge pclk);
 endclocking
 
 
+clocking mmon_cb@(posedge pclk);
+	default input #1 output #1;
+	input scl_pad_i;
+	output scl_pad_o;
+	output scl_padoen_o;
+	input sda_pad_i;
+	output sda_pad_o;
+	output sda_padoen_o;
+endclocking
+
+
+clocking sdrv_cb@(posedge pclk);
+	default input #1 output #1;
+	input scl_pad_i;
+	output scl_pad_o;
+	output scl_padoen_o;
+	input sda_pad_i;
+	output sda_pad_o;
+	output sda_padoen_o;
+	output s_resetn;
+endclocking
+
+
 clocking smon_cb@(posedge pclk);
-	default input #1; output #1;
-	input scl_pad_i;
-	output scl_pad_o;
-	output scl_padoen_o;
-	input sda_pad_i;
-	output sda_pad_o;
-	output sda_padoen_o;
-endclocking
-
-
-clocking sdrv_cb@(posedge pclk);
-	default input #1; output #1;
-	input scl_pad_i;
-	output scl_pad_o;
-	output scl_padoen_o;
-	input sda_pad_i;
-	output sda_pad_o;
-	output sda_padoen_o;
-endclocking
-
-
-clocking sdrv_cb@(posedge pclk);
-	default input #1; output #1;
+	default input #1 output #1;
 	output scl_pad_i;
 	input scl_pad_o;
 	input scl_padoen_o;

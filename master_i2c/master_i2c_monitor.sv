@@ -9,7 +9,7 @@ master_i2c_agent_config m_cfg;
 uvm_analysis_port #(master_i2c_txn) mon_port;
 
 
-extern function new(string name="master_i2c_monitior",uvm_component parent);
+extern function new(string name="master_i2c_monitor",uvm_component parent);
 extern function void build_phase(uvm_phase phase);
 extern function void connect_phase(uvm_phase phase);
 extern task run_phase(uvm_phase phase);
@@ -44,8 +44,8 @@ endtask
 
 task master_i2c_monitor::collect_data();
 	
-	master_i2c_xtn xtn;
-	xtn=master_i2c_xtn::type_id::create("xtn");
+	master_i2c_txn  txn;
+	txn=master_i2c_txn::type_id::create("txn");
 
 		
 /*	xtn.data_i=vif.mon_cb.wb_dat_i;

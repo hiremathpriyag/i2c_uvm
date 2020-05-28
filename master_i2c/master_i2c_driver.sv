@@ -49,7 +49,7 @@ task master_i2c_driver::run_phase(uvm_phase phase);
 endtask
 
 
-task master_i2c_driver::send_to_dut(master_i2c_xtn xtn);
+task master_i2c_driver::send_to_dut(master_i2c_txn txn);
 
 /*	`uvm_info("DRV",$sformatf("printing from Driver %s",xtn.sprint()),UVM_LOW)
 
@@ -78,10 +78,10 @@ if(xtn.addr_i==3'd2 && xtn.we_i==0)
 		$display("Put Response IIR: %b",xtn.iir);
 		
   end
-	
+	*/
 	m_cfg.drv_data_sent_cnt++;
 
-	*/
+	
 
 endtask	
 

@@ -8,26 +8,26 @@
 // CONDITIONS OF ANY KIND, either express or implied. See the License for the
 // specific language governing permissions and limitations under the License.
 
-`include "axi_bus.sv"
+//`include "axi_bus.sv"
 `include "apb_bus.sv"
-`include "debug_bus.sv"
+//`include "debug_bus.sv"
 `include "config.sv"
 
 module peripherals
   #(
-    parameter AXI_ADDR_WIDTH       = 32,
-    parameter AXI_DATA_WIDTH       = 64,
-    parameter AXI_USER_WIDTH       = 6,
-    parameter AXI_SLAVE_ID_WIDTH   = 6,
-    parameter AXI_MASTER_ID_WIDTH  = 6,
-    parameter ROM_START_ADDR       = 32'h8000
+  //  parameter AXI_ADDR_WIDTH       = 32,
+  //  parameter AXI_DATA_WIDTH       = 64,
+  //  parameter AXI_USER_WIDTH       = 6,
+  //  parameter AXI_SLAVE_ID_WIDTH   = 6,
+  //  parameter AXI_MASTER_ID_WIDTH  = 6,
+  //  parameter ROM_START_ADDR       = 32'h8000
   )
   (
     // Clock and Reset
     input logic clk_i,
     input logic rst_n,
 
-    AXI_BUS.Master axi_spi_master,
+    /*AXI_BUS.Master axi_spi_master,
 
     DEBUG_BUS.Master debug,
 
@@ -67,15 +67,15 @@ module peripherals
     input  logic              spi_master_sdi1,
     input  logic              spi_master_sdi2,
     input  logic              spi_master_sdi3,
-
+*/
     input  logic              scl_pad_i,
     output logic              scl_pad_o,
     output logic              scl_padoen_o,
     input  logic              sda_pad_i,
     output logic              sda_pad_o,
-    output logic              sda_padoen_o,
+    output logic              sda_padoen_o
 
-    input  logic       [31:0] gpio_in,
+  /*  input  logic       [31:0] gpio_in,
     output logic       [31:0] gpio_out,
     output logic       [31:0] gpio_dir,
     output logic [31:0] [5:0] gpio_padcfg,
@@ -96,31 +96,31 @@ module peripherals
 
     output logic [31:0] [5:0] pad_cfg_o,
     output logic       [31:0] pad_mux_o,
-    output logic       [31:0] boot_addr_o
+    output logic       [31:0] boot_addr_o*/
   );
 
   localparam APB_ADDR_WIDTH  = 32;
-  localparam APB_NUM_SLAVES  = 8;
+  localparam APB_NUM_SLAVES  = 1;
 
-  APB_BUS s_apb_bus();
+  //APB_BUS s_apb_bus();
 
-  APB_BUS s_uart_bus();
-  APB_BUS s_gpio_bus();
-  APB_BUS s_spi_bus();
-  APB_BUS s_timer_bus();
-  APB_BUS s_event_unit_bus();
+  //APB_BUS s_uart_bus();
+  //APB_BUS s_gpio_bus();
+  //APB_BUS s_spi_bus();
+  //APB_BUS s_timer_bus();
+  //APB_BUS s_event_unit_bus();
   APB_BUS s_i2c_bus();
-  APB_BUS s_fll_bus();
-  APB_BUS s_soc_ctrl_bus();
-  APB_BUS s_debug_bus();
+  //APB_BUS s_fll_bus();
+  //APB_BUS s_soc_ctrl_bus();
+  //APB_BUS s_debug_bus();
 
-  logic [1:0]   s_spim_event;
-  logic [3:0]   timer_irq;
-  logic [31:0]  peripheral_clock_gate_ctrl;
+  //logic [1:0]   s_spim_event;
+  //logic [3:0]   timer_irq;
+  //logic [31:0]  peripheral_clock_gate_ctrl;
   logic [31:0]  clk_int;
-  logic         s_uart_event;
+  //logic         s_uart_event;
   logic         i2c_event;
-  logic         s_gpio_event;
+  //logic         s_gpio_event;
 
   //////////////////////////////////////////////////////////////////
   ///                                                            ///
@@ -128,7 +128,7 @@ module peripherals
   ///                                                            ///
   //////////////////////////////////////////////////////////////////
 
-  generate
+ /* generate
      genvar i;
        for (i = 0; i < APB_NUM_SLAVES; i = i + 1) begin
         cluster_clock_gating core_clock_gate
@@ -140,14 +140,14 @@ module peripherals
         );
       end
    endgenerate
-
+*/
   //////////////////////////////////////////////////////////////////
   ///                                                            ///
   /// SPI Slave, AXI Master                                      ///
   ///                                                            ///
   //////////////////////////////////////////////////////////////////
 
-  axi_spi_slave_wrap
+  /*axi_spi_slave_wrap
   #(
     .AXI_ADDRESS_WIDTH  ( AXI_ADDR_WIDTH       ),
     .AXI_DATA_WIDTH     ( AXI_DATA_WIDTH       ),
@@ -412,7 +412,7 @@ module peripherals
     .clk_gate_core_o  ( clk_gate_core_o    ),
     .core_busy_i      ( core_busy_i        )
   );
-
+*/
   //////////////////////////////////////////////////////////////////
   ///                                                            ///
   /// APB Slave 5: I2C                                           ///
@@ -442,7 +442,7 @@ module peripherals
     .sda_padoen_o ( sda_padoen_o  )
   );
 
-
+/*
   //////////////////////////////////////////////////////////////////
   ///                                                            ///
   /// APB Slave 6: FLL Ctrl                                      ///
@@ -546,4 +546,6 @@ module peripherals
     .per_master_r_opc_i   ( '0                      ),
     .per_master_r_rdata_i ( debug.rdata             )
   );
+
+  */
 endmodule

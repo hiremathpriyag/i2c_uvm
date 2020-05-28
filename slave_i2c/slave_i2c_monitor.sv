@@ -9,7 +9,7 @@ slave_i2c_agent_config s_cfg;
 uvm_analysis_port #(slave_i2c_txn) mon_port;
 
 
-extern function new(string name="slave_i2c_monitior",uvm_component parent);
+extern function new(string name="slave_i2c_monitor",uvm_component parent);
 extern function void build_phase(uvm_phase phase);
 extern function void connect_phase(uvm_phase phase);
 extern task run_phase(uvm_phase phase);
@@ -44,8 +44,8 @@ endtask
 
 task slave_i2c_monitor::collect_data();
 	
-	slave_i2c_xtn xtn;
-	txn=slave_i2c_xtn::type_id::create("txn");
+	slave_i2c_txn txn;
+	txn=slave_i2c_txn::type_id::create("txn");
 
 		
 /*	xtn.data_i=vif.mon_cb.wb_dat_i;

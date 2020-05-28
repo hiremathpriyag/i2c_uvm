@@ -8,7 +8,7 @@
 // CONDITIONS OF ANY KIND, either express or implied. See the License for the
 // specific language governing permissions and limitations under the License.
 
-`include "axi_bus.sv"
+/*`include "axi_bus.sv"
 `include "debug_bus.sv"
 
 `define AXI_ADDR_WIDTH         32
@@ -16,7 +16,7 @@
 `define AXI_ID_MASTER_WIDTH     2
 `define AXI_ID_SLAVE_WIDTH      4
 `define AXI_USER_WIDTH          1
-
+*/
 module pulpino_top
   #(
     parameter USE_ZERO_RISCY       = 0,
@@ -29,16 +29,16 @@ module pulpino_top
     input logic               clk /*verilator clocker*/,
     input logic               rst_n,
 
-    input  logic              clk_sel_i,
+   /* input  logic              clk_sel_i,
     input  logic              clk_standalone_i,
     input  logic              testmode_i,
     input  logic              fetch_enable_i,
     input  logic              scan_enable_i,
-
+*/
     //SPI Slave
-    input  logic              spi_clk_i /*verilator clocker*/,
-    input  logic              spi_cs_i /*verilator clocker*/,
-    output logic [1:0]        spi_mode_o,
+   // input  logic      spi_clk_i /*verilator clocker*/,
+  //  input  logic              spi_cs_i /*verilator clocker*/,
+  /*  output logic [1:0]        spi_mode_o,
     output logic              spi_sdo0_o,
     output logic              spi_sdo1_o,
     output logic              spi_sdo2_o,
@@ -63,15 +63,15 @@ module pulpino_top
     input  logic              spi_master_sdi1_i,
     input  logic              spi_master_sdi2_i,
     input  logic              spi_master_sdi3_i,
-
+*/
     input  logic              scl_pad_i,
     output logic              scl_pad_o,
     output logic              scl_padoen_o,
     input  logic              sda_pad_i,
     output logic              sda_pad_o,
-    output logic              sda_padoen_o,
+    output logic              sda_padoen_o
 
-    output logic              uart_tx,
+ /*   output logic              uart_tx,
     input  logic              uart_rx,
     output logic              uart_rts,
     output logic              uart_dtr,
@@ -92,10 +92,10 @@ module pulpino_top
 
     // PULPino specific pad config
     output logic [31:0] [5:0] pad_cfg_o,
-    output logic       [31:0] pad_mux_o
+    output logic       [31:0] pad_mux_o*/
   );
 
-  logic        clk_int;
+ /* logic        clk_int;
 
   logic        fetch_enable_int;
   logic        core_busy_int;
@@ -201,24 +201,24 @@ module pulpino_top
     .tdi_i          ( tdi_i             ),
     .tdo_o          ( tdo_o             )
   );
-
+*/
   //----------------------------------------------------------------------------//
   // Peripherals
   //----------------------------------------------------------------------------//
   peripherals
-  #(
+ /* #(
     .AXI_ADDR_WIDTH      ( `AXI_ADDR_WIDTH      ),
     .AXI_DATA_WIDTH      ( `AXI_DATA_WIDTH      ),
     .AXI_SLAVE_ID_WIDTH  ( `AXI_ID_SLAVE_WIDTH  ),
     .AXI_MASTER_ID_WIDTH ( `AXI_ID_MASTER_WIDTH ),
     .AXI_USER_WIDTH      ( `AXI_USER_WIDTH      )
-  )
+  )*/
   peripherals_i
   (
     .clk_i           ( clk_int           ),
     .rst_n           ( rstn_int          ),
 
-    .axi_spi_master  ( masters[2]        ),
+   /* .axi_spi_master  ( masters[2]        ),
     .debug           ( debug             ),
 
     .spi_clk_i       ( spi_clk_i         ),
@@ -257,15 +257,15 @@ module pulpino_top
     .spi_master_sdi1 ( spi_master_sdi1_i ),
     .spi_master_sdi2 ( spi_master_sdi2_i ),
     .spi_master_sdi3 ( spi_master_sdi3_i ),
-
+*/
     .scl_pad_i       ( scl_pad_i         ),
     .scl_pad_o       ( scl_pad_o         ),
     .scl_padoen_o    ( scl_padoen_o      ),
     .sda_pad_i       ( sda_pad_i         ),
     .sda_pad_o       ( sda_pad_o         ),
-    .sda_padoen_o    ( sda_padoen_o      ),
+    .sda_padoen_o    ( sda_padoen_o      )
 
-    .gpio_in         ( gpio_in           ),
+ /*   .gpio_in         ( gpio_in           ),
     .gpio_out        ( gpio_out          ),
     .gpio_dir        ( gpio_dir          ),
     .gpio_padcfg     ( gpio_padcfg       ),
@@ -286,9 +286,10 @@ module pulpino_top
     .pad_cfg_o       ( pad_cfg_o         ),
     .pad_mux_o       ( pad_mux_o         ),
     .boot_addr_o     ( boot_addr_int     )
+    */
   );
 
-
+/*
   //----------------------------------------------------------------------------//
   // Axi node
   //----------------------------------------------------------------------------//
@@ -313,7 +314,7 @@ module pulpino_top
 
     .start_addr_i ( { 32'h1A10_0000, 32'h0010_0000, 32'h0000_0000 } ),
     .end_addr_i   ( { 32'h1A11_FFFF, 32'h001F_FFFF, 32'h000F_FFFF } )
-  );
+  );*/
 
 endmodule
 

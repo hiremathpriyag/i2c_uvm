@@ -1,4 +1,4 @@
-/  ############################################################################
+//  ############################################################################
 //
 //  Licensed to the Apache Software Foundation (ASF) under one
 //  or more contributor license agreements.  See the NOTICE file
@@ -24,6 +24,8 @@
 // Description of the module:
 // top of testbench environment intantiates with rtl 
 //-----------------------------------------------------------------------------
+//
+`timescale 1ps/1ps
 module i2c_top;
 
 import uvm_pkg::*;
@@ -37,13 +39,7 @@ i2c_interface in0(clock);
 
 
  pulpino_top
-  #(
-    .USE_ZERO_RISCY    ( USE_ZERO_RISCY ),
-    .RISCY_RV32F       ( RISCY_RV32F    ),
-    .ZERO_RV32M        ( ZERO_RV32M     ),
-    .ZERO_RV32E        ( ZERO_RV32E     )
-   )
-  top_i
+   top_i
   (
     .clk               ( clock        ),
     .rst_n             ( s_resetn     ),
@@ -52,7 +48,7 @@ i2c_interface in0(clock);
     .scl_padoen_o      ( scl_padoen_o ),
     .sda_pad_i         ( sda_pad_i    ),
     .sda_pad_o         ( sda_pad_o    ),
-    .sda_padoen_o      ( sda_padoen_o ),
+    .sda_padoen_o      ( sda_padoen_o )
 
 
   );

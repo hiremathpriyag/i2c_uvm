@@ -12,7 +12,7 @@ endfunction
 
 
 /////////////////////////////////////////first_sequence////////////////////////////////////////
-class s_i2c_seq1extends slave_i2c_sequence;
+class s_i2c_seq1 extends slave_i2c_sequence;
 
 `uvm_object_utils(s_i2c_seq1)
 

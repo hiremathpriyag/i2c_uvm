@@ -2,8 +2,8 @@ class i2c_scoreboard extends uvm_scoreboard;
 
 `uvm_component_utils(i2c_scoreboard)
 
-uvm_tlm_analysis_fifo #(i2c_xtn) fifo_0;
-uvm_tlm_analysis_fifo #(i2c_xtn) fifo_1;
+uvm_tlm_analysis_fifo #(master_i2c_txn) fifo_0;
+uvm_tlm_analysis_fifo #(slave_i2c_txn) fifo_1;
 
 static int i2c_xtn_0,i2c_xtn_1,xtns_compared,xtns_dropped;
 
@@ -29,8 +29,8 @@ endfunction
 
 
 function void i2c_scoreboard::build_phase(uvm_phase phase);
-	i2c_data_0=i2c_xtn::type_id::create("i2c_data_0");
-	i2c_data_1=i2c_xtn::type_id::create("i2c_data_1");
+	i2c_data_0=master_i2c_txn::type_id::create("i2c_data_0");
+	i2c_data_1=slave_i2c_txn::type_id::create("i2c_data_1");
 endfunction
 
 

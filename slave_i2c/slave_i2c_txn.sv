@@ -1,4 +1,4 @@
-/  ############################################################################
+//  ############################################################################
 //
 //  Licensed to the Apache Software Foundation (ASF) under one
 //  or more contributor license agreements.  See the NOTICE file
@@ -39,13 +39,12 @@ rand bit pwrite;
 bit pready;
 bit prdata;
 
-int[31:0] cpr;
-int [31:0]ctrl;
-int [31:0] tx;
-int [31:0]rx;
-int [31:0]cmd;
-int [31:0] status;
-
+int cpr [31:0];
+int ctrl [31:0];
+int tx [31:0] ;
+int rx [31:0];
+int cmd [31:0];
+int status [31:0] ;
 
 //---------------------------------------------
 // Externally defined tasks and functions
@@ -65,7 +64,7 @@ endclass
 //  phase - constructs  the class
 //-----------------------------------------------------------------------------
 
-function slave_i2c_txn :: new (string name ="mastre_i2c_txn");
+function slave_i2c_txn :: new (string name ="slave_i2c_txn");
 	super.new(name);
 endfunction
 
@@ -84,7 +83,7 @@ function void slave_i2c_txn ::do_print(uvm_printer printer);
 	printer.print_field("PWRITE", this.pwrite , 32, UVM_DEC);
 	printer.print_field("PRDATA", this.prdata , 32, UVM_DEC);
         printer.print_field("PREADY", this.pready , 32, UVM_DEC);
-        printer.print_field("PRSLVER", this.prslver , 32, UVM_DEC);
+       // printer.print_field("PRSLVER", this.prslver , 32, UVM_DEC);
 endfunction
 
 

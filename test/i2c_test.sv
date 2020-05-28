@@ -1,33 +1,3 @@
-/  ############################################################################
-//
-//  Licensed to the Apache Software Foundation (ASF) under one
-//  or more contributor license agreements.  See the NOTICE file
-//  distributed with this work for additional information
-//  regarding copyright ownership.  The ASF licenses this file
-//  to you under the Apache License, Version 2.0 (the
-//  "License"); you may not use this file except in compliance
-//  with the License.  You may obtain a copy of the License at
-//
-//  http://www.apache.org/licenses/LICENSE-2.0
-//
-//  Unless required by applicable law or agreed to in writing,
-//  software distributed under the License is distributed on an
-//  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-//  KIND, either express or implied.  See the License for the
-//  specific language governing permissions and limitations
-//  under the License.
-//
-//  ###########################################################################
-
-//-----------------------------------------------------------------------------
-// Class: test
-// Description of the class :
-// This class passes all the sequences
-//-----------------------------------------------------------------------------
-
-`ifndef i2c_test
-`define i2c_test
-
 class i2c_test extends uvm_test;
 
 	`uvm_component_utils(i2c_test)
@@ -73,8 +43,8 @@ endclass
 
 
 function void i2c_test::build_phase(uvm_phase phase);
-	super.build_phase(uvm_phase phase);
-       e_cfg=i2c_env_config::type_id::create(e_cfg);
+	super.build_phase(phase);
+       e_cfg=i2c_env_config::type_id::create("e_cfg");
      
 
           //number of  agent creations
@@ -90,7 +60,7 @@ function void i2c_test::build_phase(uvm_phase phase);
        
 	   //setting of the environment configuration
 
-	   uvm_config_db #(i2c_env_config)::set(this,"*","i2c_env_config",e_cfg)
+	   uvm_config_db #(i2c_env_config)::set(this,"*","i2c_env_config",e_cfg);
 
 	   //create environment using factory method
       
@@ -111,12 +81,12 @@ endfunction
 		  m_cfg=new[no_of_agents];
 		  foreach(m_cfg[i])
 	          begin
-	          m_cfg[i]=master_i2c_agent_config::type_id::create($sformatf("m_cfg[%0d]",i);
+	          	m_cfg[i]=master_i2c_agent_config::type_id::create($sformatf("m_cfg[%0d]",i));	
 		  if(!uvm_config_db #(virtual i2c_interface)::get(this," ",$sformatf("vif[%0d]",i),m_cfg[i].vif))
-		 `uvm_fatal ("test cannot get the virtual interface to the master agent confiv")
+		 `uvm_fatal ("test"," cannot get the virtual interface to the master agent confiv")
 		  m_cfg[i].is_active=UVM_ACTIVE;
 
-                  e_cfg.master_agt_cfg=m_cfg[i];
+                  e_cfg.master_agt_cfg[i]=m_cfg[i];
 		  end
 	 end
 
@@ -125,12 +95,12 @@ endfunction
 		  s_cfg=new[no_of_agents];
 		  foreach(s_cfg[i])
 	          begin
-	          s_cfg[i]=slave_i2c_agent_config::type_id::create($sformatf("s_cfg[%0d]",i);
+	          s_cfg[i]=slave_i2c_agent_config::type_id::create($sformatf("s_cfg[%0d]",i));
 		  if(!uvm_config_db #(virtual i2c_interface)::get(this," ",$sformatf("vif[%0d]",i),s_cfg[i].vif))
-		 `uvm_fatal ("test cannot get the virtual interface to the master agent confiv")
+		 `uvm_fatal ("test"," cannot get the virtual interface to the master agent confiv")
 		  s_cfg[i].is_active=UVM_ACTIVE;
 
-                  e_cfg.slave_agt_cfg=s_cfg[i];
+                  e_cfg.slave_agt_cfg[i]=s_cfg[i];
 		  end
 	 end
 
@@ -142,7 +112,7 @@ endfunction
 
 ////////////////////////////////////////////////////////////test1/////////////////////////////////////////////////////////////////////////////
  
- class test_1 extends i2c_test;
+/* class test_1 extends i2c_test;
 	 `uvm_component_utils(test_1)
 	 i2c_virtual_sequence seq;
 
@@ -193,5 +163,5 @@ endclass
 	endtask
 
 
-`endif
-
+//`endif
+*/

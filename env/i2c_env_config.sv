@@ -8,8 +8,8 @@ bit has_agent_top=2;
 int no_of_agents=2;
 bit has_virtual_sequencer=1;
 
-master_i2c_agent_config m_agt_cfg[];
-slave_i2c_agent_config s_agt_cfg[];
+master_i2c_agent_config master_agt_cfg[];
+slave_i2c_agent_config slave_agt_cfg[];
 
 
 
@@ -18,7 +18,7 @@ extern function new(string name="i2c_env_config");
 endclass
 
 
-function uart_env_config::new(string name="i2c_env_config");
+function i2c_env_config::new(string name="i2c_env_config");
 	super.new(name);
 endfunction
 

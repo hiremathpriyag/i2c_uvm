@@ -1,0 +1,352 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/priya/i2c_uvm/i2c_uvm/sim
+YAPB_BUS
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+r1
+!s85 0
+31
+!i10b 1
+!s100 JL><BDkN^o=h22>B9EJ<O3
+I]eARbME>;JB2SLU`;b7jf1
+Z3 !s105 peripherals_sv_unit
+S1
+R0
+w1571219706
+8..\rtl\apb_bus.sv
+F..\rtl\apb_bus.sv
+L0 73
+Z4 OE;L;10.6c;65
+Z5 !s108 1589814647.000000
+Z6 !s107 ../test/i2c_test.sv|../env/i2c_env.sv|../env/i2c_scoreboard.sv|../env/i2c_virtual_sequence.sv|../env/i2c_virtual_sequencer.sv|../slave_i2c/slave_i2c_sequence.sv|../slave_i2c/slave_i2c_agent_top.sv|../slave_i2c/slave_i2c_agent.sv|../slave_i2c/slave_i2c_sequencer.sv|../slave_i2c/slave_i2c_monitor.sv|../slave_i2c/slave_i2c_driver.sv|../master_i2c/master_i2c_sequence.sv|../master_i2c/master_i2c_agent_top.sv|../master_i2c/master_i2c_agent.sv|../master_i2c/master_i2c_sequencer.sv|../master_i2c/master_i2c_monitor.sv|../master_i2c/master_i2c_driver.sv|../env/i2c_env_config.sv|../slave_i2c/slave_i2c_agent_config.sv|../master_i2c/master_i2c_agent_config.sv|../slave_i2c/slave_i2c_txn.sv|../master_i2c/master_i2c_txn.sv|C:/questasim_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_deprecated_defines.svh|C:/questasim_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_reg_defines.svh|C:/questasim_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_callback_defines.svh|C:/questasim_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_sequence_defines.svh|C:/questasim_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/tlm1/uvm_tlm_imps.svh|C:/questasim_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_tlm_defines.svh|C:/questasim_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_printer_defines.svh|C:/questasim_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_object_defines.svh|C:/questasim_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_phase_defines.svh|C:/questasim_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_message_defines.svh|C:/questasim_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_version_defines.svh|C:/questasim_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/uvm_macros.svh|..\rtl\apb_bus.sv|..\rtl\i2c_master_defines.sv|..\rtl\config.sv|../env/i2c_top.sv|../test/i2c_pkg.sv|../rtl/pulpino_top.sv|../rtl/peripherals.sv|../rtl/i2c_master_defines.sv|../rtl/i2c_master_byte_ctrl.sv|../rtl/i2c_master_bit_ctrl.sv|../rtl/i2c_interface.sv|../rtl/i2c_eeprom_model.sv|../rtl/config.sv|../rtl/apb_i2c.sv|../rtl/apb_bus.sv|
+Z7 !s90 -work|work|-sv|+incdir|../rtl/apb_bus.sv|../rtl/apb_i2c.sv|../rtl/config.sv|../rtl/i2c_eeprom_model.sv|../rtl/i2c_interface.sv|../rtl/i2c_master_bit_ctrl.sv|../rtl/i2c_master_byte_ctrl.sv|../rtl/i2c_master_defines.sv|../rtl/peripherals.sv|../rtl/pulpino_top.sv|../rtl/i2c_interface.sv|../test/i2c_pkg.sv|../env/i2c_top.sv|
+!i113 0
+Z8 o-work work -sv +incdir -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z9 tCvgOpt 0
+n@a@p@b_@b@u@s
+vapb_i2c
+R1
+R2
+r1
+!s85 0
+31
+!i10b 1
+!s100 f;n]zCnMjj2DkfZ1XH4j[0
+IPRXSaAbh2gF;NLV<j6K=O1
+!s105 apb_i2c_sv_unit
+S1
+R0
+w1578395502
+8../rtl/apb_i2c.sv
+F../rtl/apb_i2c.sv
+Z10 L0 20
+R4
+R5
+R6
+R7
+!i113 0
+R8
+R9
+vi2c_buf
+R1
+Z11 !s110 1589814647
+!i10b 1
+!s100 W2>1^^ZCkP5h?Q_?e`Dea2
+Ih7IfT;GnREBVTeo>]^EDN0
+R2
+Z12 !s105 i2c_eeprom_model_sv_unit
+S1
+R0
+Z13 w1589034591
+Z14 8../rtl/i2c_eeprom_model.sv
+Z15 F../rtl/i2c_eeprom_model.sv
+L0 19
+R4
+r1
+!s85 0
+31
+R5
+R6
+R7
+!i113 0
+R8
+R9
+vi2c_eeprom_model
+R1
+Z16 DXx4 work 13 pkg_i2c_model 0 22 llJB=OWH`8PLUlWCJ1:GC1
+R11
+!i10b 1
+!s100 M^I:Vgd6<75jA[VHbL0=B1
+IonZVM2<nc^P84J1@l0Km42
+R2
+R12
+S1
+R0
+R13
+R14
+R15
+L0 243
+R4
+r1
+!s85 0
+31
+R5
+R6
+R7
+!i113 0
+R8
+R9
+Yi2c_interface
+R1
+R2
+r1
+!s85 0
+31
+!i10b 1
+!s100 gVeZWalMS39<RQPjaT12F1
+IEh]Zi^:kBm7^_m]Xl?l>k0
+!s105 i2c_interface_sv_unit
+S1
+R0
+w1589814631
+8../rtl/i2c_interface.sv
+F../rtl/i2c_interface.sv
+L0 30
+R4
+R5
+R6
+R7
+!i113 0
+R8
+R9
+vi2c_master_bit_ctrl
+R1
+R2
+r1
+!s85 0
+31
+!i10b 1
+!s100 LVEh7WBObHBki<j]JOFe^1
+IiShRVceGDUFWNzQZ6C2;G1
+!s105 i2c_master_bit_ctrl_sv_unit
+S1
+R0
+w1571304008
+8../rtl/i2c_master_bit_ctrl.sv
+F../rtl/i2c_master_bit_ctrl.sv
+L0 139
+R4
+R5
+R6
+R7
+!i113 0
+R8
+R9
+vi2c_master_byte_ctrl
+R1
+R2
+r1
+!s85 0
+31
+!i10b 1
+!s100 8nZMaVeW<=jRPE^WNT8k`2
+I>`L[K^_9^jb6WE`Jd6:fi2
+!s105 i2c_master_byte_ctrl_sv_unit
+S1
+R0
+w1579164584
+8../rtl/i2c_master_byte_ctrl.sv
+F../rtl/i2c_master_byte_ctrl.sv
+L0 71
+R4
+R5
+R6
+R7
+!i113 0
+R8
+R9
+vi2c_model_phy
+R1
+R16
+R11
+!i10b 1
+!s100 @cP7>5>e`7R2cD6]:M1Q22
+I`[n:bZd?iE2GKQk0oe[8c0
+R2
+R12
+S1
+R0
+R13
+R14
+R15
+L0 40
+R4
+r1
+!s85 0
+31
+R5
+R6
+R7
+!i113 0
+R8
+R9
+Xi2c_pkg
+!s115 i2c_interface
+R1
+Z17 DXx6 mtiUvm 7 uvm_pkg 0 22 oMKUklN?>LE6@MJe7=2><1
+VmQYKii1W;Gzkkej=KhVYo0
+r1
+!s85 0
+31
+!i10b 1
+!s100 eFJH`;n?`J`LMV<;8E?Lc1
+ImQYKii1W;Gzkkej=KhVYo0
+S1
+R0
+w1589814408
+8../test/i2c_pkg.sv
+F../test/i2c_pkg.sv
+FC:/questasim_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/uvm_macros.svh
+FC:/questasim_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_version_defines.svh
+FC:/questasim_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_message_defines.svh
+FC:/questasim_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_phase_defines.svh
+FC:/questasim_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_object_defines.svh
+FC:/questasim_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_printer_defines.svh
+FC:/questasim_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_tlm_defines.svh
+FC:/questasim_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/tlm1/uvm_tlm_imps.svh
+FC:/questasim_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_sequence_defines.svh
+FC:/questasim_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_callback_defines.svh
+FC:/questasim_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_reg_defines.svh
+FC:/questasim_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_deprecated_defines.svh
+F../master_i2c/master_i2c_txn.sv
+F../slave_i2c/slave_i2c_txn.sv
+F../master_i2c/master_i2c_agent_config.sv
+F../slave_i2c/slave_i2c_agent_config.sv
+F../env/i2c_env_config.sv
+F../master_i2c/master_i2c_driver.sv
+F../master_i2c/master_i2c_monitor.sv
+F../master_i2c/master_i2c_sequencer.sv
+F../master_i2c/master_i2c_agent.sv
+F../master_i2c/master_i2c_agent_top.sv
+F../master_i2c/master_i2c_sequence.sv
+F../slave_i2c/slave_i2c_driver.sv
+F../slave_i2c/slave_i2c_monitor.sv
+F../slave_i2c/slave_i2c_sequencer.sv
+F../slave_i2c/slave_i2c_agent.sv
+F../slave_i2c/slave_i2c_agent_top.sv
+F../slave_i2c/slave_i2c_sequence.sv
+F../env/i2c_virtual_sequencer.sv
+F../env/i2c_virtual_sequence.sv
+F../env/i2c_scoreboard.sv
+F../env/i2c_env.sv
+F../test/i2c_test.sv
+L0 1
+R4
+R5
+R6
+R7
+!i113 0
+R8
+R9
+vi2c_top
+R1
+R17
+DXx4 work 7 i2c_pkg 0 22 mQYKii1W;Gzkkej=KhVYo0
+R2
+r1
+!s85 0
+31
+!i10b 1
+!s100 ZgQBRD5J9kAV`Vz^b_1TH1
+IS_23dbZYLT0XH2?8zEUY90
+!s105 i2c_top_sv_unit
+S1
+R0
+w1589808089
+8../env/i2c_top.sv
+F../env/i2c_top.sv
+L0 29
+R4
+R5
+R6
+R7
+!i113 0
+R8
+R9
+vperipherals
+R1
+R2
+r1
+!s85 0
+31
+!i10b 1
+!s100 H:?z8CC`kX>d<5ge9T<kS0
+I9;@;9QaUmFaJ5XY=Sf8kJ0
+R3
+S1
+R0
+w1589796583
+8../rtl/peripherals.sv
+F../rtl/peripherals.sv
+L0 16
+R4
+R5
+R6
+R7
+!i113 0
+R8
+R9
+Xpkg_i2c_model
+R1
+R11
+!i10b 1
+!s100 eiG8ejIESKDEno`]d@^Vi3
+IllJB=OWH`8PLUlWCJ1:GC1
+VllJB=OWH`8PLUlWCJ1:GC1
+S1
+R0
+R13
+R14
+R15
+L0 12
+R4
+r1
+!s85 0
+31
+R5
+R6
+R7
+!i113 0
+R8
+R9
+vpulpino_top
+R1
+R2
+r1
+!s85 0
+31
+!i10b 1
+!s100 40=1a`<Cj4e0MOGVFo?K<1
+IbhMOd[3:^d9PZSl^@=L5f0
+!s105 pulpino_top_sv_unit
+S1
+R0
+w1589807613
+8../rtl/pulpino_top.sv
+F../rtl/pulpino_top.sv
+R10
+R4
+R5
+R6
+R7
+!i113 0
+R8
+R9

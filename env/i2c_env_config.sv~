@@ -18,7 +18,7 @@ extern function new(string name="i2c_env_config");
 endclass
 
 
-function uart_env_config::new(string name="i2c_env_config");
+function i2c_env_config::new(string name="i2c_env_config");
 	super.new(name);
 endfunction
 

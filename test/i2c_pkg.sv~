@@ -5,7 +5,8 @@ import uvm_pkg::*;
 
 `include "uvm_macros.svh"
 
-`include "master_i2c_xtn.sv"
+`include "../master_i2c/master_i2c_txn.sv"
+`include "../slave_i2c/slave_i2c_txn.sv"
 
 `include "master_i2c_agent_config.sv"
 `include "master_i2c_agent_config.sv"

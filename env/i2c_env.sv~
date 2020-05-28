@@ -23,13 +23,22 @@ function void i2c_env::build_phase(uvm_phase phase);
 	super.build_phase(phase);
 	if(!uvm_config_db #(i2c_env_config)::get(this,"","i2c_env_config",e_cfg))
 	`uvm_fatal("ENV","cannot get the e_cfg from the i2c_env_config DB")
+
+
+
 if(e_cfg.has_agent_top)
+		e_cfg.master_agt_cfg=new[no_of_agents];
+		
+	if(e_cfg.has_agent_top)
+		e_cfg.slave_agt_cfg=new[no_of_agents];
+
+/*if(e_cfg.has_agent_top)
 	m_agt_top=master_i2c_agent_top::type_id::create("m_agt_top",this);
 
 if(e_cfg.has_agent_top)
 	s_agt_top=master_i2c_agent_top::type_id::create("s_agt_top",this);
 
-
+*/
 if(e_cfg.has_virtual_sequencer)
 	v_sequencer=i2c_virtual_sequencer::type_id::create("v_sequencer",this);
 

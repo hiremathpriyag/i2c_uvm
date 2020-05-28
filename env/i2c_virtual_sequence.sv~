@@ -6,7 +6,7 @@ master_i2c_sequencer m_seqrh[];
 slave_i2c_sequencer  s_seqrh[];
 i2c_virtual_sequencer v_seqrh;
 
-uart_env_config e_cfg;
+i2c_env_config e_cfg;
 
 
 extern function new(string name="i2c_virtual_sequence");
