@@ -112,7 +112,7 @@ endfunction
 
 ////////////////////////////////////////////////////////////test1/////////////////////////////////////////////////////////////////////////////
  
-/* class test_1 extends i2c_test;
+ class test_1 extends i2c_test;
 	 `uvm_component_utils(test_1)
 	 i2c_virtual_sequence seq;
 
@@ -130,7 +130,7 @@ endclass
 //-----------------------------------------------------------------------------
 
 
-        function test1::new(string name ="test_1",uvm_component parent);
+        function test_1::new(string name ="test_1",uvm_component parent);
 		super.new(name,parent);
 	endfunction
 //-----------------------------------------------------------------------------
@@ -163,5 +163,5 @@ endclass
 	endtask
 
 
-//`endif
-*/
+
+

@@ -25,7 +25,7 @@
 // top of testbench environment intantiates with rtl 
 //-----------------------------------------------------------------------------
 //
-`timescale 1ps/1ps
+`timescale 1ns/1ns
 module i2c_top;
 
 import uvm_pkg::*;
@@ -33,13 +33,24 @@ import i2c_pkg::*;
 
 bit clock;
 
-always 
+/*always 
 begin
 	clock =!clock;
 end
+
+*/
+
+initial begin
+	clock =0;
+	#5;
+	forever clock=~clock;
+	#5;
+	$display ("displayimg the clock");
+
+end
 i2c_interface in0(clock);
 
-
+/*
  pulpino_top
    top_i
   (
@@ -55,7 +66,7 @@ i2c_interface in0(clock);
 
   );
 
-
+*/
 /*i2c_eeprom_model
   #(
     .ADDRESS ( 7'b1010_000 )
@@ -75,6 +86,6 @@ i2c_interface in0(clock);
  initial
    begin
      uvm_config_db #(virtual i2c_interface) :: set (null ,"*","vif_0",in0);
-     run_test("i2c_test");
+     run_test("test_1");
    end
 endmodule

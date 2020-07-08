@@ -27,9 +27,53 @@
 //-----------------------------------------------------------------------------
 `timescale 1ns/1ps
 
-interface i2c_interface(input pclk);
+interface i2c_interface(input clk);
 
-	logic s_resetn;
+      logic s_resetn;
+      logic i2c_scl;
+      logic i2c_sda;
+
+
+     clocking mdrv@(posedge clk);
+	     default input #1 output #0;
+	     output s_resetn;
+	    output i2c_scl;
+	    output i2c_sda;
+     endclocking
+
+
+
+    clocking mmon@(posedge clk);
+	     default input #1 output #0;
+
+         input i2c_scl;
+	 input i2c_sda;
+    endclocking
+
+
+
+    clocking sdrv@(posedge clk);
+	     default input #1 output #0;
+
+	    input i2c_scl;
+	    output i2c_sda;
+    endclocking
+
+    clocking smon@(posedge clk);
+	     default input #1 output #0;
+
+	    output i2c_scl;
+	    input i2c_sda;
+    endclocking
+
+
+  modport MDRV (clocking mdrv);
+  modport MMON (clocking mmon);
+  modport SDRV (clocking sdrv);
+  modport SMON (clocking smon);
+
+
+/*	logic s_resetn;
 	logic scl_pad_i;
 	logic scl_pad_o;
 	logic scl_padoen_o;
@@ -88,7 +132,7 @@ modport MDRV (clocking mdrv_cb);
 modport MMON (clocking mmon_cb);
 modport SDRV (clocking sdrv_cb);
 modport SMON (clocking smon_cb);
-
+*/
 endinterface
 
 

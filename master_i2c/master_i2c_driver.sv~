@@ -34,10 +34,10 @@ endfunction
 
 task master_i2c_driver::run_phase(uvm_phase phase);
 
-	@(vif.mdrv_cb);
-	 	vif.mdrv_cb.s_resetn<=1'b0;
-	@(vif.mdrv_cb);
-		vif.mdrv_cb.s_resetn<=1'b1;	
+	@(vif.mdrv);
+	 	vif.s_resetn<=1'b0;
+	@(vif.mdrv);
+		vif.s_resetn<=1'b1;	
 	
 	
 	forever 
@@ -49,7 +49,9 @@ task master_i2c_driver::run_phase(uvm_phase phase);
 endtask
 
 
-task master_i2c_driver::send_to_dut(master_i2c_xtn xtn);
+task master_i2c_driver::send_to_dut(master_i2c_txn txn);
+
+	txn=master_i2c_txn::type_id::create("txn");
 
 /*	`uvm_info("DRV",$sformatf("printing from Driver %s",xtn.sprint()),UVM_LOW)
 
@@ -78,10 +80,57 @@ if(xtn.addr_i==3'd2 && xtn.we_i==0)
 		$display("Put Response IIR: %b",xtn.iir);
 		
   end
-	
+	*/
+      
+
+          fork 
+
+            begin
+              vif.mdrv.i2c_scl<=1 ;
+	      vif.mdrv.i2c_sda<=0;
+	      $display("start of i2c frame");
+
+            end
+            
+           begin 
+	   vif.mdrv.i2c_sda<=1;
+               for(txn.count=6; txn.count>0 ; txn.count--  )
+	     vif.mdrv.i2c_sda<=txn.i2c_addr[txn.count];
+           end
+
+          begin
+           vif.mdrv.i2c_sda<=1;
+	   txn.r_w<=0; 
+		  vif.mdrv.i2c_sda<=txn.ack;
+                  
+          end
+
+         begin
+            vif.mdrv.i2c_sda<=1;
+	   for(txn.count=8; txn.count>0; txn.count--)
+	   vif.mdrv.i2c_sda<=txn.i2c_data[txn.count];
+
+	   if(txn.count==0)
+		   vif.mdrv.i2c_sda<=txn.ack;
+                   
+
+         end
+
+       begin
+              vif.mdrv.i2c_scl<=1 ;
+	      vif.mdrv.i2c_sda<=1;
+	      $display("stop of i2c frame");
+
+
+
+       end
+          join
+
+
+
 	m_cfg.drv_data_sent_cnt++;
 
-	*/
+	
 
 endtask	
 

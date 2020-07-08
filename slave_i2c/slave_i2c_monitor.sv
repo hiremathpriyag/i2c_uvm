@@ -47,6 +47,12 @@ task slave_i2c_monitor::collect_data();
 	slave_i2c_txn txn;
 	txn=slave_i2c_txn::type_id::create("txn");
 
+        txn.i2c_addr=vif.smon.i2c_sda;
+	txn.r_w=vif.smon.i2c_sda;
+        txn.ack=vif.smon.i2c_sda;
+	txn.i2c_data=vif.smon.i2c_sda;
+
+
 		
 /*	xtn.data_i=vif.mon_cb.wb_dat_i;
 	xtn.addr_i=vif.mon_cb.wb_addr_i;

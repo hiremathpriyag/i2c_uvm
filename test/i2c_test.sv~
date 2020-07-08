@@ -49,10 +49,10 @@ function void i2c_test::build_phase(uvm_phase phase);
 
           //number of  agent creations
 	  if(has_agent_top)
-		  e_cfg.master_agt_cfg[i]=new[no_of_agents];
+		  e_cfg.master_agt_cfg=new[no_of_agents];
 
 	  if(has_agent_top)
-		  e_cfg.slave_agt_cfg[i]=new[no_of_agents];
+		  e_cfg.slave_agt_cfg=new[no_of_agents];
 	         
 	         
 	  //calling the configuration function
@@ -112,7 +112,7 @@ endfunction
 
 ////////////////////////////////////////////////////////////test1/////////////////////////////////////////////////////////////////////////////
  
-/* class test_1 extends i2c_test;
+ class test_1 extends i2c_test;
 	 `uvm_component_utils(test_1)
 	 i2c_virtual_sequence seq;
 
@@ -163,5 +163,5 @@ endclass
 	endtask
 
 
-//`endif
-*/
+
+

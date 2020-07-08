@@ -31,8 +31,8 @@ task s_i2c_seq1::body();
 begin
 	
 	start_item(req);
-//	assert(req.randomize() with {;})	//To select the DLAB make the LCR bit 7 as 1
-	`uvm_info("S_I2C_SEQ1 DLAB",$sformatf("Printing from s_i2c_Seq1 %s",req.sprint()),UVM_HIGH)
+	assert(req.randomize() )
+	`uvm_info("S_I2C_SEQ1 CPR",$sformatf("Printing from s_i2c_Seq1 %s",req.sprint()),UVM_HIGH)
 	finish_item(req);
 
 	

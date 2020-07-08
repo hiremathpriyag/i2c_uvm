@@ -13,10 +13,10 @@
 # //  is prohibited from disclosure under the Trade Secrets Act,
 # //  18 U.S.C. Section 1905.
 # //
-# OpenFile ../rtl/apb_bus.sv ../rtl/apb_i2c.sv ../rtl/config.sv ../rtl/i2c_eeprom_model.sv ../rtl/i2c_interface.sv ../rtl/i2c_master_bit_ctrl.sv ../rtl/i2c_master_byte_ctrl.sv ../rtl/i2c_master_defines.sv ../rtl/peripherals.sv ../rtl/pulpino_top.sv ../rtl/i2c_interface.sv ../test/i2c_pkg.sv ../env/i2c_top.sv
-vsim -novopt i2c_top
-# vsim -novopt i2c_top 
-# Start time: 20:41:21 on May 18,2020
+# OpenFile ../rtl/i2c_interface.sv ../test/i2c_pkg.sv ../env/i2c_top.sv
+vsim -novopt i2c_top -t 10ns
+# vsim -novopt i2c_top -t 10ns 
+# Start time: 01:27:27 on Jul 08,2020
 # ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
 # Refreshing C:/Users/priya/i2c_uvm/i2c_uvm/sim/work.i2c_top
 # Refreshing C:/Users/priya/i2c_uvm/i2c_uvm/sim/work.i2c_interface
@@ -26,40 +26,15 @@ vsim -novopt i2c_top
 # Loading mtiUvm.uvm_pkg
 # Loading work.i2c_pkg
 # Loading work.i2c_top
-# Refreshing C:/Users/priya/i2c_uvm/i2c_uvm/sim/work.pulpino_top
-# Loading work.pulpino_top
-# Refreshing C:/Users/priya/i2c_uvm/i2c_uvm/sim/work.peripherals
-# Loading work.peripherals
-# Refreshing C:/Users/priya/i2c_uvm/i2c_uvm/sim/work.APB_BUS
-# Loading work.APB_BUS
-# Refreshing C:/Users/priya/i2c_uvm/i2c_uvm/sim/work.apb_i2c
-# Loading work.apb_i2c
-# Refreshing C:/Users/priya/i2c_uvm/i2c_uvm/sim/work.i2c_master_byte_ctrl
-# Loading work.i2c_master_byte_ctrl
-# Refreshing C:/Users/priya/i2c_uvm/i2c_uvm/sim/work.i2c_master_bit_ctrl
-# Loading work.i2c_master_bit_ctrl
 # Loading mtiUvm.questa_uvm_pkg
 # Loading C:/questasim_10.6c/uvm-1.1d\win32\uvm_dpi.dll
-add wave -position insertpoint sim:/i2c_top/top_i/*
-vsim -novopt i2c_top -t ps
-# End time: 16:18:19 on May 19,2020, Elapsed time: 19:36:58
-# Errors: 0, Warnings: 1
-# vsim -novopt i2c_top -t ps 
-# Start time: 16:18:19 on May 19,2020
-# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
-# Loading sv_std.std
-# Loading work.i2c_interface
-# Loading mtiUvm.uvm_pkg
-# Loading work.i2c_pkg
-# Loading work.i2c_top
-# Loading work.pulpino_top
-# Loading work.peripherals
-# Loading work.APB_BUS
-# Loading work.apb_i2c
-# Loading work.i2c_master_byte_ctrl
-# Loading work.i2c_master_bit_ctrl
-# Loading mtiUvm.questa_uvm_pkg
-# Loading C:/questasim_10.6c/uvm-1.1d\win32\uvm_dpi.dll
+add wave -position insertpoint sim:/i2c_top/in0/*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: priya  Hostname: DESKTOP-PT1D4C2  ProcessID: 8564
+#           Attempting to use alternate WLF file "./wlft9ys9vj".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft9ys9vj
+add wave -position insertpoint sim:/i2c_top/*
 run -all
 # ----------------------------------------------------------------
 # UVM-1.1d
@@ -83,7 +58,8 @@ run -all
 # 
 # UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(215) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
 # UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(217) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test test_1...
 # Break key hit
-# Break in Module i2c_top at ../env/i2c_top.sv line 38
-# End time: 16:19:32 on May 19,2020, Elapsed time: 0:01:13
-# Errors: 0, Warnings: 1
+# Break in Module i2c_top at ../env/i2c_top.sv line 46
+# End time: 01:29:39 on Jul 08,2020, Elapsed time: 0:02:12
+# Errors: 0, Warnings: 3

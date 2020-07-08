@@ -32,12 +32,12 @@ class slave_i2c_txn extends uvm_sequence_item;
 
 	`uvm_object_utils(slave_i2c_txn)
 
-rand bit [31:0] paddr;
-rand bit [31:0] pwdata;
-rand bit penable;
-rand bit pwrite;
-bit pready;
-bit prdata;
+rand bit i2c_scl;
+rand bit [6:0] i2c_addr;
+rand bit [7:0] i2c_data;
+rand bit [7:0] count;
+rand bit r_w;
+rand bit ack;
 
 int cpr [31:0];
 int ctrl [31:0];

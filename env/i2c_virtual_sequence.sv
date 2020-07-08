@@ -41,35 +41,35 @@ task i2c_virtual_sequence::body();
 endtask
 
 
-			//==================================FULL-DUPLEX V_SEQ======================================//
-/*
-class uart_fd_vseq extends i2c_virtual_sequence;
+			//==================================FIRST TRANSACTION======================================//
 
-`uvm_object_utils(uart_fd_vseq)
+class i2c_ft_vseq extends i2c_virtual_sequence;
 
-uart_seq1 seq1;
-uart_seq2 seq2;
+`uvm_object_utils(i2c_ft_vseq)
 
-extern function new(string name="uart_fd_vseq");
+i2c_seq1 seq1; 
+s_i2c_seq1 seq2;
+
+extern function new(string name="i2c_ft_vseq");
 extern task body();
 endclass
 
 
-function uart_fd_vseq::new(string name="uart_fd_vseq");
+function i2c_ft_vseq::new(string name="i2c_ft_vseq");
 	super.new(name);
 endfunction
 
 
-task uart_fd_vseq::body();
+task i2c_ft_vseq::body();
 	super.body();
 
-	seq1=uart_seq1::type_id::create("seq1");
-	seq2=uart_seq2::type_id::create("seq2");
+	seq1=i2c_seq1::type_id::create("seq1");
+	seq2=s_i2c_seq1::type_id::create("seq2");
 
+	
 	fork
-	fork
-	    seq3.start(seqrh[0]);
-	    seq4.start(seqrh[1]);
+	    seq1.start(m_seqrh[0]);
+	    seq2.start(s_seqrh[1]);
 	join 
 endtask
-*/	
+	

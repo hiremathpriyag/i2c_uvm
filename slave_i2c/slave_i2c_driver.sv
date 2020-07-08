@@ -34,12 +34,12 @@ endfunction
 
 task slave_i2c_driver::run_phase(uvm_phase phase);
 
-	@(vif.sdrv_cb);
-	 	vif.sdrv_cb.s_resetn<=1'b0;
-	@(vif.sdrv_cb);
-		vif.sdrv_cb.s_resetn<=1'b1;	
+/*	@(vif.sdrv);
+	 	vif.s_resetn<=1'b0;
+	@(vif.sdrv);
+		vif.s_resetn<=1'b1;	
 	
-	
+	*/
 	forever 
 		begin
 		     seq_item_port.get_next_item(req);
@@ -82,6 +82,15 @@ if(xtn.addr_i==3'd2 && xtn.we_i==0)
 	m_cfg.drv_data_sent_cnt++;
 
 	*/
+
+        begin
+           vif.sdrv.i2c_sda<=1;
+	   txn.r_w<=1; 
+		  vif.sdrv.i2c_sda<=txn.ack;
+                  
+          end
+
+
 
 endtask	
 

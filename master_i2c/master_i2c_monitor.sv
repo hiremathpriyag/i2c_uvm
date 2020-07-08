@@ -47,6 +47,13 @@ task master_i2c_monitor::collect_data();
 	master_i2c_txn  txn;
 	txn=master_i2c_txn::type_id::create("txn");
 
+
+	txn.i2c_addr=vif.mmon.i2c_sda;
+	txn.r_w=vif.mmon.i2c_sda;
+        txn.ack=vif.mmon.i2c_sda;
+	txn.i2c_data=vif.mmon.i2c_sda;
+
+
 		
 /*	xtn.data_i=vif.mon_cb.wb_dat_i;
 	xtn.addr_i=vif.mon_cb.wb_addr_i;

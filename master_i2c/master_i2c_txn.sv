@@ -32,12 +32,19 @@ class master_i2c_txn extends uvm_sequence_item;
 
 	`uvm_object_utils(master_i2c_txn)
 
-rand bit [31:0] paddr;
+/*rand bit [31:0] paddr;
 rand bit [31:0] pwdata;
 rand bit penable;
 rand bit pwrite;
 bit pready;
 bit prdata;
+*/
+rand bit i2c_scl;
+rand bit [6:0] i2c_addr;
+rand bit [7:0] i2c_data;
+rand bit [7:0] count;
+rand bit r_w;
+rand bit ack;
 
 int cpr [31:0];
 int ctrl [31:0];
@@ -45,7 +52,8 @@ int tx [31:0] ;
 int rx [31:0];
 int cmd [31:0];
 int status [31:0] ;
-
+ 
+  constraint k {i2c_scl ==1 ;}
 
 //---------------------------------------------
 // Externally defined tasks and functions
@@ -78,13 +86,21 @@ endfunction
 
 function void master_i2c_txn ::do_print(uvm_printer printer);
 	super.do_print(printer);
-	printer.print_field("PADDR", this.paddr , 32, UVM_DEC);
+
+	printer.print_field("I2C_ADDR", this.i2c_addr , 7, UVM_DEC);
+	printer.print_field("I2C_DATA", this.i2c_data ,8, UVM_DEC);
+	printer.print_field("R_W", this.r_w , 1, UVM_DEC);
+	printer.print_field("COUNT", this.count , 8, UVM_DEC);
+
+	printer.print_field("ack", this.ack , 1, UVM_DEC);
+	/*printer.print_field("PADDR", this.paddr , 32, UVM_DEC);
+	printer.print_field("PENABLE", this.penable , 32, UVM_DEC);
 	printer.print_field("PWDATA", this.pwdata , 32, UVM_DEC);
 	printer.print_field("PENABLE", this.penable , 32, UVM_DEC);
 	printer.print_field("PWRITE", this.pwrite , 32, UVM_DEC);
 	printer.print_field("PRDATA", this.prdata , 32, UVM_DEC);
         printer.print_field("PREADY", this.pready , 32, UVM_DEC);
-      //  printer.print_field("PRSLVER", this.prslver , 32, UVM_DEC);
+      //  printer.print_field("PRSLVER", this.prslver , 32, UVM_DEC);*/
 endfunction
 
 
