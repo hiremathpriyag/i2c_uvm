@@ -2,7 +2,7 @@ class slave_i2c_driver extends uvm_driver #(slave_i2c_txn);
 
 `uvm_component_utils(slave_i2c_driver)
 
-virtual i2c_interface.SDRV vif;
+virtual salve_interface.SDRV vif;
 
 slave_i2c_agent_config s_cfg;
 
@@ -34,12 +34,12 @@ endfunction
 
 task slave_i2c_driver::run_phase(uvm_phase phase);
 
-	@(vif.sdrv);
+/*	@(vif.sdrv);
 	 	vif.s_resetn<=1'b0;
 	@(vif.sdrv);
 		vif.s_resetn<=1'b1;	
 	
-	
+	*/
 	forever 
 		begin
 		     seq_item_port.get_next_item(req);

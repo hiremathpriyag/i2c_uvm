@@ -82,7 +82,7 @@ endfunction
 		  foreach(m_cfg[i])
 	          begin
 	          	m_cfg[i]=master_i2c_agent_config::type_id::create($sformatf("m_cfg[%0d]",i));	
-		  if(!uvm_config_db #(virtual i2c_interface)::get(this," ",$sformatf("vif[%0d]",i),m_cfg[i].vif))
+		  if(!uvm_config_db #(virtual master_interface)::get(this," ",$sformatf("vif[%0d]",i),m_cfg[i].vif))
 		 `uvm_fatal ("test"," cannot get the virtual interface to the master agent confiv")
 		  m_cfg[i].is_active=UVM_ACTIVE;
 
@@ -96,7 +96,7 @@ endfunction
 		  foreach(s_cfg[i])
 	          begin
 	          s_cfg[i]=slave_i2c_agent_config::type_id::create($sformatf("s_cfg[%0d]",i));
-		  if(!uvm_config_db #(virtual i2c_interface)::get(this," ",$sformatf("vif[%0d]",i),s_cfg[i].vif))
+		  if(!uvm_config_db #(virtual slave_interface)::get(this," ",$sformatf("vif[%0d]",i),s_cfg[i].vif))
 		 `uvm_fatal ("test"," cannot get the virtual interface to the master agent confiv")
 		  s_cfg[i].is_active=UVM_ACTIVE;
 
@@ -130,7 +130,7 @@ endclass
 //-----------------------------------------------------------------------------
 
 
-        function test1::new(string name ="test_1",uvm_component parent);
+        function test_1::new(string name ="test_1",uvm_component parent);
 		super.new(name,parent);
 	endfunction
 //-----------------------------------------------------------------------------

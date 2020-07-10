@@ -1,0 +1,11 @@
+
+
+
+   // dut wrapper including two interfaces 
+     
+    `include master_interface.sv
+    `include slave_interface.sv
+
+    
+
+   

@@ -1,0 +1,23 @@
+interface i2c_interface(input bit clk);
+
+           logic i2c_scl;
+      logic i2c_sda;
+
+clocking sdrv@(posedge clk);
+	     default input #1 output #0;
+
+	    	    output i2c_sda;
+    endclocking
+
+    clocking smon@(posedge clk);
+	     default input #1 output #0;
+
+	      input i2c_sda;
+    endclocking
+
+
+   modport SDRV (clocking sdrv);
+  modport SMON (clocking smon);
+
+endinterface
+

@@ -32,22 +32,32 @@ import uvm_pkg::*;
 import i2c_pkg::*;
 
 bit clock;
-
-/*always 
+bit reset;
+always
 begin
-	clock =!clock;
+clock = 0;
+forever #10 clock = ~clock;
 end
 
-*/
+initial
+begin 
+reset=1'b1;
+#5;
+reset=1'b0;
+end
 
-initial begin
+
+dut_wrap DUT(.clk(clock),.reset(s_reset_n),.i2c_scl(i2c_scl),.i2c_sda(i2c_sda));
+/*initial begin
 	clock =0;
 	#5;
 	forever clock=~clock;
+	#5;
 	$display ("displayimg the clock");
 
-end
+end*/
 i2c_interface in0(clock);
+//slave_interface in1(clock);
 
 /*
  pulpino_top
@@ -84,7 +94,11 @@ i2c_interface in0(clock);
 
  initial
    begin
-     uvm_config_db #(virtual i2c_interface) :: set (null ,"*","vif_0",in0);
+	   
+     uvm_config_db #(virtual i2c_interface) :: set (null ,"*","vif",in0);
+     //uvm_config_db #(virtual master_interface) :: set (null ,"*","vif_0",in0);
+     //uvm_config_db #(virtual slave_interface) :: set (null ,"*","vif_1",in1);
      run_test("test_1");
+    uvm_top.print_topology();
    end
 endmodule

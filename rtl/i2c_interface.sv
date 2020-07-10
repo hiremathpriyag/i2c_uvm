@@ -25,9 +25,9 @@
 // with the clocking bloks and modports
 // 
 //-----------------------------------------------------------------------------
-`timescale 1ns/1ps
+`timescale 1ns/1ns
 
-interface i2c_interface(input clk);
+interface i2c_interface(input bit clk);
 
       logic s_resetn;
       logic i2c_scl;
@@ -55,15 +55,13 @@ interface i2c_interface(input clk);
     clocking sdrv@(posedge clk);
 	     default input #1 output #0;
 
-	    input i2c_scl;
-	    output i2c_sda;
+	    	    output i2c_sda;
     endclocking
 
     clocking smon@(posedge clk);
 	     default input #1 output #0;
 
-	    output i2c_scl;
-	    input i2c_sda;
+	      input i2c_sda;
     endclocking
 
 

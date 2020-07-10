@@ -1,0 +1,140 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/priya/i2c_uvm/i2c_uvm/dut_wrapper
+Yi2c_interface
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+r1
+!s85 0
+31
+!i10b 1
+!s100 iEQZ`oZkWkO<R7SOJQiJf2
+I5XH_lA?a4GYPgY4>5a2S[1
+!s105 i2c_interface_sv_unit
+S1
+R0
+w1594375845
+8../rtl/i2c_interface.sv
+F../rtl/i2c_interface.sv
+L0 30
+Z3 OE;L;10.6c;65
+Z4 !s108 1594380715.000000
+Z5 !s107 ../test/i2c_test.sv|../env/i2c_env.sv|../env/i2c_scoreboard.sv|../env/i2c_virtual_sequence.sv|../env/i2c_virtual_sequencer.sv|../slave_i2c/slave_i2c_sequence.sv|../slave_i2c/slave_i2c_agent_top.sv|../slave_i2c/slave_i2c_agent.sv|../slave_i2c/slave_i2c_sequencer.sv|../slave_i2c/slave_i2c_monitor.sv|../slave_i2c/slave_i2c_driver.sv|../master_i2c/master_i2c_sequence.sv|../master_i2c/master_i2c_agent_top.sv|../master_i2c/master_i2c_agent.sv|../master_i2c/master_i2c_sequencer.sv|../master_i2c/master_i2c_monitor.sv|../master_i2c/master_i2c_driver.sv|../env/i2c_env_config.sv|../slave_i2c/slave_i2c_agent_config.sv|../master_i2c/master_i2c_agent_config.sv|../slave_i2c/slave_i2c_txn.sv|../master_i2c/master_i2c_txn.sv|C:/questasim_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_deprecated_defines.svh|C:/questasim_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_reg_defines.svh|C:/questasim_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_callback_defines.svh|C:/questasim_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_sequence_defines.svh|C:/questasim_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/tlm1/uvm_tlm_imps.svh|C:/questasim_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_tlm_defines.svh|C:/questasim_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_printer_defines.svh|C:/questasim_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_object_defines.svh|C:/questasim_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_phase_defines.svh|C:/questasim_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_message_defines.svh|C:/questasim_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_version_defines.svh|C:/questasim_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/uvm_macros.svh|../env/i2c_top.sv|../test/i2c_pkg.sv|../rtl/i2c_interface.sv|
+Z6 !s90 ../rtl/i2c_interface.sv|../test/i2c_pkg.sv|../env/i2c_top.sv|+UVM_TESTNAME=test1|
+!i113 0
+Z7 o+UVM_TESTNAME=test1 -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z8 tCvgOpt 0
+Xi2c_pkg
+!s115 i2c_interface
+R1
+Z9 DXx6 mtiUvm 7 uvm_pkg 0 22 oMKUklN?>LE6@MJe7=2><1
+VG6>S0<GnnfD=AH7o=bbKo2
+r1
+!s85 0
+31
+!i10b 1
+!s100 CPl:kRA4?^E8DF>j<;gW80
+IG6>S0<GnnfD=AH7o=bbKo2
+S1
+R0
+w1594380357
+8../test/i2c_pkg.sv
+F../test/i2c_pkg.sv
+FC:/questasim_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/uvm_macros.svh
+FC:/questasim_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_version_defines.svh
+FC:/questasim_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_message_defines.svh
+FC:/questasim_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_phase_defines.svh
+FC:/questasim_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_object_defines.svh
+FC:/questasim_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_printer_defines.svh
+FC:/questasim_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_tlm_defines.svh
+FC:/questasim_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/tlm1/uvm_tlm_imps.svh
+FC:/questasim_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_sequence_defines.svh
+FC:/questasim_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_callback_defines.svh
+FC:/questasim_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_reg_defines.svh
+FC:/questasim_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_deprecated_defines.svh
+F../master_i2c/master_i2c_txn.sv
+F../slave_i2c/slave_i2c_txn.sv
+F../master_i2c/master_i2c_agent_config.sv
+F../slave_i2c/slave_i2c_agent_config.sv
+F../env/i2c_env_config.sv
+F../master_i2c/master_i2c_driver.sv
+F../master_i2c/master_i2c_monitor.sv
+F../master_i2c/master_i2c_sequencer.sv
+F../master_i2c/master_i2c_agent.sv
+F../master_i2c/master_i2c_agent_top.sv
+F../master_i2c/master_i2c_sequence.sv
+F../slave_i2c/slave_i2c_driver.sv
+F../slave_i2c/slave_i2c_monitor.sv
+F../slave_i2c/slave_i2c_sequencer.sv
+F../slave_i2c/slave_i2c_agent.sv
+F../slave_i2c/slave_i2c_agent_top.sv
+F../slave_i2c/slave_i2c_sequence.sv
+F../env/i2c_virtual_sequencer.sv
+F../env/i2c_virtual_sequence.sv
+F../env/i2c_scoreboard.sv
+F../env/i2c_env.sv
+F../test/i2c_test.sv
+L0 1
+R3
+R4
+R5
+R6
+!i113 0
+R7
+R8
+vi2c_top
+R1
+R9
+DXx4 work 7 i2c_pkg 0 22 G6>S0<GnnfD=AH7o=bbKo2
+R2
+r1
+!s85 0
+31
+!i10b 1
+!s100 mB5zknI9MCo<cP:_4GEHX2
+IfDXN^E6TmfzaT3[^]id7P3
+!s105 i2c_top_sv_unit
+S1
+R0
+w1594380703
+8../env/i2c_top.sv
+F../env/i2c_top.sv
+L0 29
+R3
+R4
+R5
+R6
+!i113 0
+R7
+R8
+Ymaster_interface
+R1
+!s110 1594379977
+!i10b 1
+!s100 0^<z_PA02XVzSC4nbR03W3
+I>CI][9D@1D>jJ`DhM1o4R0
+R2
+!s105 master_interface_sv_unit
+S1
+R0
+w1594378930
+8../dut_wrapper/master_interface.sv
+F../dut_wrapper/master_interface.sv
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1594379977.000000
+!s107 ../test/i2c_test.sv|../env/i2c_env.sv|../env/i2c_scoreboard.sv|../env/i2c_virtual_sequence.sv|../env/i2c_virtual_sequencer.sv|../slave_i2c/slave_i2c_sequence.sv|../slave_i2c/slave_i2c_agent_top.sv|../slave_i2c/slave_i2c_agent.sv|../slave_i2c/slave_i2c_sequencer.sv|../slave_i2c/slave_i2c_monitor.sv|../slave_i2c/slave_i2c_driver.sv|../master_i2c/master_i2c_sequence.sv|../master_i2c/master_i2c_agent_top.sv|../master_i2c/master_i2c_agent.sv|../master_i2c/master_i2c_sequencer.sv|../master_i2c/master_i2c_monitor.sv|../master_i2c/master_i2c_driver.sv|../env/i2c_env_config.sv|../slave_i2c/slave_i2c_agent_config.sv|../master_i2c/master_i2c_agent_config.sv|../slave_i2c/slave_i2c_txn.sv|../master_i2c/master_i2c_txn.sv|C:/questasim_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_deprecated_defines.svh|C:/questasim_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_reg_defines.svh|C:/questasim_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_callback_defines.svh|C:/questasim_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_sequence_defines.svh|C:/questasim_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/tlm1/uvm_tlm_imps.svh|C:/questasim_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_tlm_defines.svh|C:/questasim_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_printer_defines.svh|C:/questasim_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_object_defines.svh|C:/questasim_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_phase_defines.svh|C:/questasim_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_message_defines.svh|C:/questasim_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_version_defines.svh|C:/questasim_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/uvm_macros.svh|../env/i2c_top.sv|../test/i2c_pkg.sv|../dut_wrapper/slave_interface.sv|../dut_wrapper/master_interface.sv|
+!s90 ../dut_wrapper/master_interface.sv|../dut_wrapper/slave_interface.sv|../test/i2c_pkg.sv|../env/i2c_top.sv|+UVM_TESTNAME=test1|
+!i113 0
+R7
+R8

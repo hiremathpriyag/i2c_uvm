@@ -130,7 +130,7 @@ if(xtn.addr_i==3'd2 && xtn.we_i==0)
 
 	m_cfg.drv_data_sent_cnt++;
 
-	
+            $display("print the write transaction %d", txn. i2c_addr);	
 
 endtask	
 
