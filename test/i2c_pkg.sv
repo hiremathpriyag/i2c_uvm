@@ -20,12 +20,12 @@ import uvm_pkg::*;
 `include "../master_i2c/master_i2c_agent_top.sv"
 `include "../master_i2c/master_i2c_sequence.sv"
 
-`include "../slave_i2c/slave_i2c_driver.sv"
+//`include "../slave_i2c/slave_i2c_driver.sv"
 `include "../slave_i2c/slave_i2c_monitor.sv"
-`include "../slave_i2c/slave_i2c_sequencer.sv"
+//`include "../slave_i2c/slave_i2c_sequencer.sv"
 `include "../slave_i2c/slave_i2c_agent.sv"
 `include "../slave_i2c/slave_i2c_agent_top.sv"
-`include "../slave_i2c/slave_i2c_sequence.sv"
+//`include "../slave_i2c/slave_i2c_sequence.sv"
 
 `include "../env/i2c_virtual_sequencer.sv"
 `include "../env/i2c_virtual_sequence.sv"

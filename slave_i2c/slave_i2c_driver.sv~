@@ -2,7 +2,7 @@ class slave_i2c_driver extends uvm_driver #(slave_i2c_txn);
 
 `uvm_component_utils(slave_i2c_driver)
 
-virtual salve_interface.SDRV vif;
+virtual i2c_interface.SDRV vif;
 
 slave_i2c_agent_config s_cfg;
 

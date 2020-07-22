@@ -45,18 +45,18 @@ interface i2c_interface(input bit clk);
 
     clocking mmon@(posedge clk);
 	     default input #1 output #0;
+	     input s_resetn;
+	    input i2c_scl;
+	    input i2c_sda;
+     endclocking
 
-         input i2c_scl;
-	 input i2c_sda;
-    endclocking
 
 
-
-    clocking sdrv@(posedge clk);
+  /*  clocking sdrv@(posedge clk);
 	     default input #1 output #0;
 
 	    	    output i2c_sda;
-    endclocking
+    endclocking*/
 
     clocking smon@(posedge clk);
 	     default input #1 output #0;
@@ -67,7 +67,7 @@ interface i2c_interface(input bit clk);
 
   modport MDRV (clocking mdrv);
   modport MMON (clocking mmon);
-  modport SDRV (clocking sdrv);
+ // modport SDRV (clocking sdrv);
   modport SMON (clocking smon);
 
 

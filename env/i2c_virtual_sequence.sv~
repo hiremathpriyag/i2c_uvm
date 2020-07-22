@@ -64,7 +64,7 @@ task i2c_ft_vseq::body();
 	super.body();
 
 	seq1=i2c_seq1::type_id::create("seq1");
-	seq2=s_i2c_seq2::type_id::create("seq2");
+	seq2=s_i2c_seq1::type_id::create("seq2");
 
 	
 	fork

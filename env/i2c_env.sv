@@ -11,6 +11,7 @@ i2c_scoreboard sb;
 extern function new(string name="i2c_env",uvm_component parent);
 extern function void build_phase(uvm_phase phase);
 extern function void connect_phase(uvm_phase phase);
+extern function void end_of_elaboration_phase (uvm_phase phase);
 endclass
 
 //new constructor
@@ -32,13 +33,13 @@ if(e_cfg.has_agent_top)
 	if(e_cfg.has_agent_top)
 		e_cfg.slave_agt_cfg=new[e_cfg.no_of_agents];
 
-/*if(e_cfg.has_agent_top)
+if(e_cfg.has_agent_top)
 	m_agt_top=master_i2c_agent_top::type_id::create("m_agt_top",this);
 
 if(e_cfg.has_agent_top)
-	s_agt_top=master_i2c_agent_top::type_id::create("s_agt_top",this);
+	s_agt_top=slave_i2c_agent_top::type_id::create("s_agt_top",this);
 
-*/
+
 if(e_cfg.has_virtual_sequencer)
 	v_sequencer=i2c_virtual_sequencer::type_id::create("v_sequencer",this);
 
@@ -56,11 +57,11 @@ function void i2c_env::connect_phase(uvm_phase phase);
 			v_sequencer.m_seqrh[i]=m_agt_top.agnth[i].m_sequencer;
 	     end
 
-	     if(e_cfg.has_agent_top)
+	    /* if(e_cfg.has_agent_top)
 	     begin
 		  foreach(v_sequencer.s_seqrh[i])
 			v_sequencer.s_seqrh[i]=s_agt_top.agnth[i].m_sequencer;
-	     end
+	     end*/
 
 	end
 
@@ -74,5 +75,11 @@ function void i2c_env::connect_phase(uvm_phase phase);
 	     end
 	end
 
+
 endfunction
+
+
+	function void i2c_env :: end_of_elaboration_phase(uvm_phase phase);
+		uvm_top.print_topology();
+	endfunction
 	

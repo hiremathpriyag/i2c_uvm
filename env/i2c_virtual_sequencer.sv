@@ -3,7 +3,7 @@ class i2c_virtual_sequencer extends uvm_sequencer #(uvm_sequence_item);
 `uvm_component_utils(i2c_virtual_sequencer)
 
 master_i2c_sequencer m_seqrh[];
-slave_i2c_sequencer  s_seqrh[];
+//slave_i2c_sequencer  s_seqrh[];
 i2c_env_config e_cfg;
 
 
@@ -24,7 +24,7 @@ function void i2c_virtual_sequencer::build_phase(uvm_phase phase);
 	super.build_phase(phase);
 	
 	m_seqrh=new[e_cfg.no_of_agents];
-	s_seqrh=new[e_cfg.no_of_agents];
+	//s_seqrh=new[e_cfg.no_of_agents];
 	
 endfunction
 

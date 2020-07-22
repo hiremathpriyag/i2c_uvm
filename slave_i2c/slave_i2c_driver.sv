@@ -11,7 +11,7 @@ extern function void build_phase(uvm_phase phase);
 extern function void connect_phase(uvm_phase phase);
 extern task run_phase(uvm_phase phase);
 extern task send_to_dut(slave_i2c_txn txn);
-extern function void report_phase(uvm_phase phase);
+//extern function void report_phase(uvm_phase phase);
 endclass
 
 
@@ -95,6 +95,6 @@ if(xtn.addr_i==3'd2 && xtn.we_i==0)
 endtask	
 
 
-function void slave_i2c_driver::report_phase(uvm_phase phase);
+/*function void slave_i2c_driver::report_phase(uvm_phase phase);
 	`uvm_info(get_type_name(),$sformatf("REPORT: Driver sent %0d transaction",s_cfg.drv_data_sent_cnt),UVM_LOW)
-endfunction	
+endfunction*/	

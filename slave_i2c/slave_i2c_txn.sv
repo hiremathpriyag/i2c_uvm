@@ -39,12 +39,13 @@ rand bit [7:0] count;
 rand bit r_w;
 rand bit ack;
 
-int cpr [31:0];
-int ctrl [31:0];
-int tx [31:0] ;
-int rx [31:0];
-int cmd [31:0];
-int status [31:0] ;
+bit [31:0]cpr[] ;
+bit [31:0] ctrl[] ;
+bit [31:0]tx [] ;
+bit [31:0]rx[];
+bit [31:0]cmd[] ;
+bit [31:0]status[]  ;
+ 
 
 //---------------------------------------------
 // Externally defined tasks and functions

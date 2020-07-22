@@ -14,9 +14,9 @@
 # //  18 U.S.C. Section 1905.
 # //
 # OpenFile ../rtl/i2c_interface.sv ../test/i2c_pkg.sv ../env/i2c_top.sv
-vsim -novopt i2c_top -t 10ns
-# vsim -novopt i2c_top -t 10ns 
-# Start time: 16:02:27 on Jul 10,2020
+vsim -novopt i2c_top
+# vsim -novopt i2c_top 
+# Start time: 20:56:33 on Jul 17,2020
 # ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
 # Refreshing C:/Users/priya/i2c_uvm/i2c_uvm/sim/work.i2c_top
 # Refreshing C:/Users/priya/i2c_uvm/i2c_uvm/sim/work.i2c_interface
@@ -28,15 +28,6 @@ vsim -novopt i2c_top -t 10ns
 # Loading work.i2c_top
 # Loading mtiUvm.questa_uvm_pkg
 # Loading C:/questasim_10.6c/uvm-1.1d\win32\uvm_dpi.dll
-add wave -position insertpoint sim:/i2c_top/*
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: priya  Hostname: DESKTOP-PT1D4C2  ProcessID: 8564
-#           Attempting to use alternate WLF file "./wlft4jkfsx".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft4jkfsx
-add wave -position insertpoint sim:/i2c_top/in0/*
-add wave -position insertpoint sim:/i2c_pkg/*
-# (vish-4014) No objects found matching '/i2c_pkg/*'.
 run -all
 # ----------------------------------------------------------------
 # UVM-1.1d
@@ -61,12 +52,40 @@ run -all
 # UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(215) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
 # UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(217) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
 # UVM_INFO @ 0: reporter [RNTST] Running test test_1...
+# UVM_INFO @ 0: reporter [UVMTOP] UVM testbench topology:
+# ----------------------------------------------------------------
+# Name                     Type                        Size  Value
+# ----------------------------------------------------------------
+# uvm_test_top             test_1                      -     @474 
+#   env                    i2c_env                     -     @486 
+#     sb                   i2c_scoreboard              -     @603 
+#       fifo_0             uvm_tlm_analysis_fifo #(T)  -     @610 
+#         analysis_export  uvm_analysis_imp            -     @649 
+#         get_ap           uvm_analysis_port           -     @641 
+#         get_peek_export  uvm_get_peek_imp            -     @625 
+#         put_ap           uvm_analysis_port           -     @633 
+#         put_export       uvm_put_imp                 -     @617 
+#       fifo_1             uvm_tlm_analysis_fifo #(T)  -     @657 
+#         analysis_export  uvm_analysis_imp            -     @696 
+#         get_ap           uvm_analysis_port           -     @688 
+#         get_peek_export  uvm_get_peek_imp            -     @672 
+#         put_ap           uvm_analysis_port           -     @680 
+#         put_export       uvm_put_imp                 -     @664 
+#     v_sequencer          i2c_virtual_sequencer       -     @494 
+#       rsp_export         uvm_analysis_export         -     @501 
+#       seq_item_export    uvm_seq_item_pull_imp       -     @595 
+#       arbitration_queue  array                       0     -    
+#       lock_queue         array                       0     -    
+#       num_last_reqs      integral                    32    'd1  
+#       num_last_rsps      integral                    32    'd1  
+# ----------------------------------------------------------------
+# 
 # UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1268) @ 1000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
 # 
 # --- UVM Report Summary ---
 # 
 # ** Report counts by severity
-# UVM_INFO :    4
+# UVM_INFO :    5
 # UVM_WARNING :    0
 # UVM_ERROR :    0
 # UVM_FATAL :    0
@@ -74,11 +93,12 @@ run -all
 # [Questa UVM]     2
 # [RNTST]     1
 # [TEST_DONE]     1
+# [UVMTOP]     1
 # ** Note: $finish    : C:/questasim_10.6c/win32/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
-#    Time: 10 us  Iteration: 54  Instance: /i2c_top
+#    Time: 1 us  Iteration: 54  Instance: /i2c_top
 # 1
 # Break in Task uvm_pkg/uvm_root::run_test at C:/questasim_10.6c/win32/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
-run
+run -all
 # UVM_INFO @ 1000: reporter [UVMTOP] UVM testbench topology:
 # ----------------------------------------------------------------
 # Name                     Type                        Size  Value
@@ -107,11 +127,3 @@ run
 #       num_last_rsps      integral                    32    'd1  
 # ----------------------------------------------------------------
 # 
-run
-run
-run
-run -all
-# Break key hit
-# Break in Module i2c_top at ../env/i2c_top.sv line 39
-# End time: 16:23:58 on Jul 10,2020, Elapsed time: 0:21:31
-# Errors: 1, Warnings: 3

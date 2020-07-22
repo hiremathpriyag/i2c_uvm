@@ -2,7 +2,7 @@ class master_i2c_driver extends uvm_driver #(master_i2c_txn);
 
 `uvm_component_utils(master_i2c_driver)
 
-virtual master_interface.MDRV vif;
+virtual i2c_interface.MDRV vif;
 
 master_i2c_agent_config m_cfg;
 
@@ -88,6 +88,7 @@ if(xtn.addr_i==3'd2 && xtn.we_i==0)
             begin
               vif.mdrv.i2c_scl<=1 ;
 	      vif.mdrv.i2c_sda<=0;
+	      vif.mdrv.i2c_sda<=txn.i2c_sda;
 	      $display("start of i2c frame");
 
             end
@@ -119,6 +120,7 @@ if(xtn.addr_i==3'd2 && xtn.we_i==0)
        begin
               vif.mdrv.i2c_scl<=1 ;
 	      vif.mdrv.i2c_sda<=1;
+	      vif.mdrv.i2c_sda<=txn.i2c_sda
 	      $display("stop of i2c frame");
 
 

@@ -32,8 +32,8 @@ task i2c_seq1::body();
 begin
 	
 	start_item(req);
-	assert(req.randomize() with {i2c_addr==7'd50; i2c_data==8'd100 ; r_w=0 ;})
-	`uvm_info("I2C_SEQ1 CPR",$sformatf("Printing from i2c_Seq1 %s",req.sprint()),UVM_HIGH)
+	assert(req.randomize() with {r/w==1’b0;})
+	`uvm_info("I2C_SEQ1 control register",$sformatf("Printing from i2c_Seq1 %b",req.sprint()),UVM_HIGH)
 	finish_item(req);
 
 	

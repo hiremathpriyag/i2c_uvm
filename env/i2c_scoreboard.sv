@@ -35,7 +35,7 @@ endfunction
 
 
 task i2c_scoreboard::run_phase(uvm_phase phase);
-/*fork
+fork
     forever
 	   begin
 		fifo_0.get(i2c_data_0);
@@ -44,11 +44,11 @@ task i2c_scoreboard::run_phase(uvm_phase phase);
 		i2c_xtn_1 ++;
 
 
-		`uvm_info("SB",$sformatf("Data from UART_1 to SB:",i2c_data_0.sprint()),UVM_LOW)
+		`uvm_info("SB",$sformatf("Data from MASTER to SB:",i2c_data_0.sprint()),UVM_LOW)
 		
-		`uvm_info("SB",$sformatf("Data from UART_2 to SB:",i2c_data_1.sprint()),UVM_LOW)
+		`uvm_info("SB",$sformatf("Data from SLAVE to SB:",i2c_data_1.sprint()),UVM_LOW)
 
-		if(i2c_data_0.thr==i2c_data_1.rx_buf) 
+		if(i2c_data_0.i2c_data==i2c_data_1.i2c_data) 
 		   begin 
 		     $display("DATA MATCHES");
 	             xtns_compared ++;
@@ -61,7 +61,7 @@ task i2c_scoreboard::run_phase(uvm_phase phase);
 
 
 
-		if(i2c_data_1.thr==i2c_data_0.rx_buf)
+	/*	if(i2c_data_1.thr==i2c_data_0.rx_buf)
 		   begin 
 		     $display("DATA MATCHES");
 	             xtns_compared ++;
@@ -71,13 +71,18 @@ task i2c_scoreboard::run_phase(uvm_phase phase);
 		    	$display("DATA MIS-MATCH");
 			xtns_dropped ++;
 		   end
-
-		if(i2c_data_1.lsr[2]==1'b1 || i2c_data_0.lsr[2]==1'b1)
+*/
+	/*	if(i2c_data_1.status[2]==1'b1 || i2c_data_0.status[2]==1'b1)
 		begin
-		     $display("/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\ PARITY ERROR /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/");
+		     $display("/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\ transfer is successful /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/");
 		end
+*/
 
-		if(i2c_data_1.lsr[1]==1'b1 || i2c_data_0.lsr[1]==1'b1)
+   end
+
+		join
+
+	/*	if(i2c_data_1.lsr[1]==1'b1 || i2c_data_0.lsr[1]==1'b1)
 		begin
 		     $display("/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\ OVER_RUN ERROR /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/");
 		end
@@ -119,8 +124,7 @@ task i2c_scoreboard::run_phase(uvm_phase phase);
 
 
 
-	   end
-join*/
+	   end*/
 endtask
 
 

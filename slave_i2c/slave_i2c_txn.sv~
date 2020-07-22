@@ -77,13 +77,13 @@ endfunction
 
 function void slave_i2c_txn ::do_print(uvm_printer printer);
 	super.do_print(printer);
-	printer.print_field("PADDR", this.paddr , 32, UVM_DEC);
+/*	printer.print_field("PADDR", this.paddr , 32, UVM_DEC);
 	printer.print_field("PWDATA", this.pwdata , 32, UVM_DEC);
 	printer.print_field("PENABLE", this.penable , 32, UVM_DEC);
 	printer.print_field("PWRITE", this.pwrite , 32, UVM_DEC);
 	printer.print_field("PRDATA", this.prdata , 32, UVM_DEC);
         printer.print_field("PREADY", this.pready , 32, UVM_DEC);
-       // printer.print_field("PRSLVER", this.prslver , 32, UVM_DEC);
+       // printer.print_field("PRSLVER", this.prslver , 32, UVM_DEC);*/
 endfunction
 
 

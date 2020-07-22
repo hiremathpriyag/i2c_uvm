@@ -88,6 +88,7 @@ if(xtn.addr_i==3'd2 && xtn.we_i==0)
             begin
               vif.mdrv.i2c_scl<=1 ;
 	      vif.mdrv.i2c_sda<=0;
+	      vif.mdrv.i2c_sda<=txn.i2c_sda;
 	      $display("start of i2c frame");
 
             end
@@ -119,6 +120,7 @@ if(xtn.addr_i==3'd2 && xtn.we_i==0)
        begin
               vif.mdrv.i2c_scl<=1 ;
 	      vif.mdrv.i2c_sda<=1;
+	      vif.mdrv.i2c_sda<=txn.i2c_sda;
 	      $display("stop of i2c frame");
 
 
